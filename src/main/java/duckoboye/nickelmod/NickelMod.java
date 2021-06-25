@@ -1,8 +1,10 @@
 package duckoboye.nickelmod;
 
 import duckoboye.nickelmod.lists.ItemList;
+import duckoboye.nickelmod.lists.ToolMaterialList;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
+import net.minecraft.item.SwordItem;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
@@ -39,7 +41,10 @@ public class NickelMod {
         @SubscribeEvent
         public static void registerItems(final RegistryEvent.Register<Item> event) {
             event.getRegistry().registerAll(
-                    ItemList.nickel = new Item(new Item.Properties().group(ItemGroup.MISC)).setRegistryName(location("nickel"))
+                    ItemList.nickel = new Item(new Item.Properties().group(ItemGroup.MISC)).setRegistryName(location("nickel")),
+                    ItemList.femboy_sword = new SwordItem(ToolMaterialList.femboy_sword, 4, - 3, new
+                            Item.Properties().group(ItemGroup.COMBAT)).setRegistryName(location("femboy_sword"))
+
             );
         }
 
