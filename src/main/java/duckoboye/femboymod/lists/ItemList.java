@@ -1,4 +1,4 @@
-package duckoboye.nickelmod.lists;
+package duckoboye.femboymod.lists;
 
 import net.minecraft.item.Item;
 

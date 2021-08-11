@@ -1,7 +1,7 @@
-package duckoboye.nickelmod;
+package duckoboye.femboymod;
 
-import duckoboye.nickelmod.lists.ItemList;
-import duckoboye.nickelmod.lists.ToolMaterialList;
+import duckoboye.femboymod.lists.ItemList;
+import duckoboye.femboymod.lists.ToolMaterialList;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.SwordItem;
@@ -18,12 +18,13 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 // This is the mod id. It must be the same as the one in mods.toml.
-@Mod("nickelmod")
-public class NickelMod {
-    public static NickelMod INSTANCE;
-    public static final String MODID = "nickelmod";
+@Mod("femboymod")
+public class FemboyMod {
+    public static FemboyMod INSTANCE;
+    public static final String MODID = "femboymod";
     private static final Logger LOGGER = LogManager.getLogger(MODID);
-    public NickelMod() {
+
+    public FemboyMod() {
         INSTANCE = this;
         // We need to call these two functions to make sure that setup and clientRegistries are called
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::commonSetup);
@@ -31,20 +32,22 @@ public class NickelMod {
         // It tells to Forge that this mod exists!
         MinecraftForge.EVENT_BUS.register(this);
     }
+
     private void commonSetup(final FMLCommonSetupEvent event) {
         LOGGER.info("Hello from commonSetup!");
     }
+
     private void clientSetup(final FMLClientSetupEvent event) {
         LOGGER.info("Hello from clientSetup!");
     }
 
-    @Mod.EventBusSubscriber(bus=Mod.EventBusSubscriber.Bus.MOD)
+    @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
     public static class RegistryEvents {
         @SubscribeEvent
         public static void registerItems(final RegistryEvent.Register<Item> event) {
             event.getRegistry().registerAll(
                     ItemList.nickel = new Item(new Item.Properties().group(ItemGroup.MATERIALS)).setRegistryName(location("nickel")),
-                    ItemList.femboy_sword = new SwordItem(ToolMaterialList.femboy_sword, 4, - 3, new Item.Properties().group(ItemGroup.COMBAT)).setRegistryName(location("femboy_sword"))
+                    ItemList.femboy_sword = new SwordItem(ToolMaterialList.femboy_sword, 4, -3, new Item.Properties().group(ItemGroup.COMBAT)).setRegistryName(location("femboy_sword"))
             );
         }
 
