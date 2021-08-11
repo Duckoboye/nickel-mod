@@ -1,0 +1,18 @@
+{
+  "sound1": {
+    "category" : "player",
+    "sounds": [{
+      "name": "MODID:sound1",
+      "stream": false
+    }
+    ]
+  },
+  "sound2": {
+    "category" : "ambient",
+    "sounds": [{
+      "name": "MODID:subfolder/sound2",
+      "stream": false
+    }
+    ]
+  }
+}

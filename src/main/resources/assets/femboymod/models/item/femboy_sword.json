@@ -1,0 +1,6 @@
+{
+  "parent": "item/handheld",
+  "textures": {
+    "layer0": "femboymod:item/femboy_sword"
+  }
+}

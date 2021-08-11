@@ -1,2 +1,0 @@
-# nickel-mod
-Example mod
